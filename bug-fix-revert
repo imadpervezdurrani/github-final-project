@@ -1,0 +1,105 @@
+[
+  {
+    "url": "https://api.github.com/repos/ibm-developer-skills-network/mcino-Introduction-to-Git-and-GitHub/pulls/1429",
+    "id": 1189456201,
+    "node_id": "PR_kwDOIt7_cw5G8KpJ",
+    "html_url": "https://github.com/ibm-developer-skills-network/mcino-Introduction-to-Git-and-GitHub/pull/1429",
+    "diff_url": "https://github.com/ibm-developer-skills-network/mcino-Introduction-to-Git-and-GitHub/pull/1429.diff",
+    "patch_url": "https://github.com/ibm-developer-skills-network/mcino-Introduction-to-Git-and-GitHub/pull/1429.patch",
+    "issue_url": "https://api.github.com/repos/ibm-developer-skills-network/mcino-Introduction-to-Git-and-GitHub/issues/1429",
+    "number": 1429,
+    "state": "open",
+    "locked": false,
+    "title": "fix: typo in simple-interest.sh",
+    "user": {
+      "login": "imadpervezdurrani",
+      "id": 300853497,
+      "node_id": "U_kgDOEe6o-Q",
+      "avatar_url": "https://avatars.githubusercontent.com/u/300853497?v=4",
+      "html_url": "https://github.com/imadpervezdurrani",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "Fixing typo in simple-interest.sh script.",
+    "created_at": "2026-09-14T05:03:00Z",
+    "updated_at": "2026-09-14T05:03:00Z",
+    "closed_at": null,
+    "merged_at": null,
+    "merge_commit_sha": null,
+    "assignee": null,
+    "assignees": [],
+    "requested_reviewers": [],
+    "requested_teams": [],
+    "labels": [],
+    "milestone": null,
+    "draft": false,
+    "head": {
+      "label": "imadpervezdurrani:bug-fix-typo",
+      "ref": "bug-fix-typo",
+      "sha": "310e174b89d5f71e9c2f623e5a329d71c1b3f92a",
+      "user": {
+        "login": "imadpervezdurrani",
+        "id": 300853497,
+        "node_id": "U_kgDOEe6o-Q",
+        "avatar_url": "https://avatars.githubusercontent.com/u/300853497?v=4",
+        "html_url": "https://github.com/imadpervezdurrani",
+        "type": "User",
+        "site_admin": false
+      },
+      "repo": {
+        "id": 587412963,
+        "node_id": "R_kgDOIt7_cw",
+        "name": "mcino-Introduction-to-Git-and-GitHub",
+        "full_name": "imadpervezdurrani/mcino-Introduction-to-Git-and-GitHub",
+        "private": false,
+        "owner": {
+          "login": "imadpervezdurrani",
+          "id": 300853497,
+          "node_id": "U_kgDOEe6o-Q",
+          "avatar_url": "https://avatars.githubusercontent.com/u/300853497?v=4",
+          "html_url": "https://github.com/imadpervezdurrani",
+          "type": "User",
+          "site_admin": false
+        },
+        "html_url": "https://github.com/imadpervezdurrani/mcino-Introduction-to-Git-and-GitHub",
+        "description": "Introduction to Git and GitHub",
+        "fork": true,
+        "url": "https://api.github.com/repos/imadpervezdurrani/mcino-Introduction-to-Git-and-GitHub"
+      }
+    },
+    "base": {
+      "label": "ibm-developer-skills-network:main",
+      "ref": "main",
+      "sha": "415392810a9bc417532d8478f293849102c91a78",
+      "user": {
+        "login": "ibm-developer-skills-network",
+        "id": 78294120,
+        "node_id": "MDEyOk9yZ2FuaXphdGlvbjc4Mjk0MTIw",
+        "avatar_url": "https://avatars.githubusercontent.com/u/78294120?v=4",
+        "html_url": "https://github.com/ibm-developer-skills-network",
+        "type": "Organization",
+        "site_admin": false
+      },
+      "repo": {
+        "id": 415392810,
+        "node_id": "MDEwOlJlcG9zaXRvcnk0MTUzOTI4MTA=",
+        "name": "mcino-Introduction-to-Git-and-GitHub",
+        "full_name": "ibm-developer-skills-network/mcino-Introduction-to-Git-and-GitHub",
+        "private": false,
+        "owner": {
+          "login": "ibm-developer-skills-network",
+          "id": 78294120,
+          "node_id": "MDEyOk9yZ2FuaXphdGlvbjc4Mjk0MTIw",
+          "avatar_url": "https://avatars.githubusercontent.com/u/78294120?v=4",
+          "html_url": "https://github.com/ibm-developer-skills-network",
+          "type": "Organization",
+          "site_admin": false
+        },
+        "html_url": "https://github.com/ibm-developer-skills-network/mcino-Introduction-to-Git-and-GitHub",
+        "description": "Introduction to Git and GitHub",
+        "fork": false,
+        "url": "https://api.github.com/repos/ibm-developer-skills-network/mcino-Introduction-to-Git-and-GitHub"
+      }
+    }
+  }
+]
