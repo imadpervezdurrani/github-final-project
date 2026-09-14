@@ -1,6 +1,8 @@
-$ git branch -a
-* main
-  bug-fix-typo
-  remotes/origin/HEAD -> origin/main
-  remotes/origin/bug-fix-typo
-  remotes/origin/main
+$ git branch -a -v
+  bug-fix-revert                991462e docs: add github-branches output file
+  bug-fix-typo                  310e174 fix: typo in simple-interest.sh
+* main                          991462e docs: add github-branches output file
+  remotes/origin/HEAD           -> origin/main
+  remotes/origin/bug-fix-revert 991462e docs: add github-branches output file
+  remotes/origin/bug-fix-typo   310e174 fix: typo in simple-interest.sh
+  remotes/origin/main           991462e docs: add github-branches output file
