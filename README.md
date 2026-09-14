@@ -1,57 +1,56 @@
-# 🔮 AuraCalc — Modern Glassmorphic Calculator
+# Simple Interest Calculator
 
-A sleek, responsive, and visually stunning web calculator crafted with modern HTML5, CSS3 Glassmorphism, and vanilla JavaScript. Features dynamic sound feedback, scientific operations, an interactive history drawer, and full keyboard navigation.
+A calculator that calculates simple interest given principal, annual rate of interest and time period in years.
 
----
+## Description
+This project provides a simple interest calculator implementation. Simple interest is a quick and easy method of calculating the interest charge on a loan or investment.
 
-## ✨ Features
+### Formula
+$$\text{Simple Interest} = \frac{P \times T \times R}{100}$$
 
-- **💎 Modern Glassmorphism & Neon Aesthetics**: Frosted blur effects, subtle floating ambient light orbs, and vivid radiant gradients.
-- **⚡ Dual Mode**:
-  - **Standard Mode**: Basic arithmetic ($+$, $-$, $\times$, $\div$), percentages, and sign toggle ($\pm$).
-  - **Scientific Panel**: Trigonometry ($\sin$, $\cos$, $\tan$), power ($x^2$, $x^y$), square root ($\sqrt{x}$), reciprocal ($1/x$), natural log ($\ln$), $\pi$, and $e$.
-- **📜 Calculation History**: Slide-out drawer tracking previous calculations. Click any past item to restore it directly onto the screen.
-- **🔊 Interactive Audio FX**: Delightful, tactile synthesizer click sounds powered by the Web Audio API (with one-click mute toggle).
-- **📋 One-Click Copy**: Quick copy button with smooth toast notification to copy your answer to the clipboard.
-- **⌨️ Keyboard Shortcuts**: Fully operable using standard keyboard and numeric numpad.
-- **📱 Fully Responsive**: Flawlessly adapts across mobile phones, tablets, and desktop screens.
+Where:
+- **P** = Principal amount
+- **T** = Time period in years
+- **R** = Annual rate of interest
 
 ---
 
-## ⌨️ Keyboard Shortcuts
+## Input & Output
 
-| Key | Function |
-| :--- | :--- |
-| `0` – `9` | Enter numbers |
-| `.` | Decimal point |
-| `+`, `-`, `*`, `/` | Basic arithmetic operators |
-| `%` | Percentage |
-| `Enter` or `=` | Calculate result |
-| `Backspace` | Delete last character |
-| `Escape` | Clear All (AC) |
+### Input:
+- **p**: Principal amount
+- **t**: Time period in years
+- **r**: Annual rate of interest
+
+### Output:
+- **simple interest**: Calculated using formula `(p * t * r) / 100`
 
 ---
 
-## 🚀 Getting Started
+## Files in this Repository
+- `simple-interest.sh`: A shell script to calculate simple interest interactively from the command line.
+- `index.html`: Interactive web application interface.
+- `style.css`: Modern glassmorphic styling and layout.
+- `script.js`: Calculator engine and client-side logic.
+- `README.md`: Documentation and instructions.
 
-### Run Locally
-Simply open [`index.html`](index.html) in any modern web browser:
+---
+
+## Usage
+
+### Using Bash Script:
 ```bash
-# Using double click on index.html, or via simple HTTP server:
-npx serve .
-# or Python
-python -m http.server 3000
+bash simple-interest.sh
 ```
 
----
-
-## 🛠️ Built With
-
-- **HTML5**: Semantic and accessible markup.
-- **Vanilla CSS**: Custom design system, CSS variables, glassmorphic filters, and keyframe animations.
-- **JavaScript (ES6+)**: Clean class-based calculator engine with float precision formatting and Web Audio synthesis.
+### Using Web Interface:
+Open `index.html` in your web browser.
 
 ---
 
-## 📄 License
-This project is open source and available under the [MIT License](LICENSE).
+## Authors
+- Upkar Lidder (IBM)
+- [imadpervezdurrani](https://github.com/imadpervezdurrani)
+
+## License
+Apache 2.0 / MIT
