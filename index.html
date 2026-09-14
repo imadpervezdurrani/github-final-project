@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AuraCalc — Modern Glassmorphic Calculator</title>
+  <meta name="description" content="A sleek, modern glassmorphic web calculator with sound feedback, scientific calculations, and history tracking.">
+  
+  <!-- Google Fonts: Outfit & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Ambient background glow elements -->
+  <div class="glow-orb orb-1" aria-hidden="true"></div>
+  <div class="glow-orb orb-2" aria-hidden="true"></div>
+  <div class="glow-orb orb-3" aria-hidden="true"></div>
+
+  <main class="calculator-wrapper">
+    <div class="calculator-card" id="calculator">
+      <!-- Calculator Header -->
+      <header class="calculator-header">
+        <div class="brand-badge">
+          <span class="brand-dot"></span>
+          <span class="brand-title">AuraCalc</span>
+        </div>
+        
+        <div class="header-actions">
+          <!-- Scientific mode toggle -->
+          <button class="icon-btn" id="btn-mode-toggle" title="Toggle Scientific Mode" aria-label="Toggle Scientific Mode">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1-2.5-2.5Z"/>
+              <path d="M6 6h10"/>
+              <path d="M6 10h10"/>
+              <path d="M9 16l3-4 3 4"/>
+            </svg>
+          </button>
+          
+          <!-- Sound toggle -->
+          <button class="icon-btn" id="btn-sound-toggle" title="Toggle Sound FX" aria-label="Toggle Sound Effects">
+            <svg id="sound-icon-on" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+              <path d="M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+              <path d="M19.07 4.93a10 10 0 0 1 0 14.14"></path>
+            </svg>
+            <svg id="sound-icon-off" class="hidden" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="1" y1="1" x2="23" y2="23"></line>
+              <path d="M9 9v3a3 3 0 0 0 5.12 2.12M15 9.34V4a3 3 0 0 0-5.94-.6"></path>
+              <path d="M17 16.95A7 7 0 0 1 5 12v-2m14 0v2a7 7 0 0 1-.11 1.23"></path>
+              <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+            </svg>
+          </button>
+
+          <!-- History panel toggle -->
+          <button class="icon-btn" id="btn-history-toggle" title="Calculation History" aria-label="Calculation History">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"></circle>
+              <polyline points="12 6 12 12 16 14"></polyline>
+            </svg>
+          </button>
+        </div>
+      </header>
+
+      <!-- Calculator Screen / Display -->
+      <section class="calculator-display" id="display-container" title="Click to copy result">
+        <div class="expression-line" id="expression-display">&nbsp;</div>
+        <div class="main-line">
+          <span class="result-number" id="result-display">0</span>
+          <button class="copy-pill" id="btn-copy" title="Copy to clipboard" aria-label="Copy result">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+              <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+            </svg>
+            <span class="copy-text">Copy</span>
+          </button>
+        </div>
+      </section>
+
+      <!-- Scientific Extra Row (collapsible) -->
+      <div class="scientific-panel" id="scientific-panel">
+        <button class="btn btn-sci" data-action="sci-sin">sin</button>
+        <button class="btn btn-sci" data-action="sci-cos">cos</button>
+        <button class="btn btn-sci" data-action="sci-tan">tan</button>
+        <button class="btn btn-sci" data-action="sci-sqrt">√x</button>
+        <button class="btn btn-sci" data-action="sci-pow2">x²</button>
+        <button class="btn btn-sci" data-action="sci-pow">xʸ</button>
+        <button class="btn btn-sci" data-action="sci-pi">π</button>
+        <button class="btn btn-sci" data-action="sci-e">e</button>
+        <button class="btn btn-sci" data-action="sci-reciprocal">1/x</button>
+        <button class="btn btn-sci" data-action="sci-paren-open">(</button>
+        <button class="btn btn-sci" data-action="sci-paren-close">)</button>
+        <button class="btn btn-sci" data-action="sci-log">ln</button>
+      </div>
+
+      <!-- Main Keypad Grid -->
+      <div class="keypad-grid" id="keypad">
+        <button class="btn btn-fn" data-action="clear" data-key="Escape">AC</button>
+        <button class="btn btn-fn" data-action="delete" data-key="Backspace">⌫</button>
+        <button class="btn btn-fn" data-action="percent" data-key="%">%</button>
+        <button class="btn btn-op" data-action="operator" data-op="÷" data-key="/">÷</button>
+
+        <button class="btn btn-num" data-action="number" data-num="7" data-key="7">7</button>
+        <button class="btn btn-num" data-action="number" data-num="8" data-key="8">8</button>
+        <button class="btn btn-num" data-action="number" data-num="9" data-key="9">9</button>
+        <button class="btn btn-op" data-action="operator" data-op="×" data-key="*">×</button>
+
+        <button class="btn btn-num" data-action="number" data-num="4" data-key="4">4</button>
+        <button class="btn btn-num" data-action="number" data-num="5" data-key="5">5</button>
+        <button class="btn btn-num" data-action="number" data-num="6" data-key="6">6</button>
+        <button class="btn btn-op" data-action="operator" data-op="−" data-key="-">−</button>
+
+        <button class="btn btn-num" data-action="number" data-num="1" data-key="1">1</button>
+        <button class="btn btn-num" data-action="number" data-num="2" data-key="2">2</button>
+        <button class="btn btn-num" data-action="number" data-num="3" data-key="3">3</button>
+        <button class="btn btn-op" data-action="operator" data-op="+" data-key="+">+</button>
+
+        <button class="btn btn-num" data-action="negate" data-key="±">±</button>
+        <button class="btn btn-num" data-action="number" data-num="0" data-key="0">0</button>
+        <button class="btn btn-num" data-action="decimal" data-key=".">.</button>
+        <button class="btn btn-equals" data-action="calculate" data-key="Enter">=</button>
+      </div>
+
+      <!-- History Drawer Overlay -->
+      <aside class="history-drawer" id="history-drawer" aria-label="Calculation History">
+        <div class="history-header">
+          <h3>History</h3>
+          <div class="history-actions">
+            <button class="btn-text-danger" id="btn-clear-history" title="Clear all history">Clear</button>
+            <button class="icon-btn-sm" id="btn-close-history" title="Close history">✕</button>
+          </div>
+        </div>
+        <div class="history-list" id="history-list">
+          <!-- Dynamically populated or empty message -->
+          <div class="empty-history">No calculations yet</div>
+        </div>
+      </aside>
+    </div>
+
+    <!-- Notification Toast -->
+    <div class="toast" id="toast">Copied to clipboard!</div>
+
+    <!-- Keyboard help hint -->
+    <footer class="app-footer">
+      <span>Keyboard friendly: type numbers, operators, <kbd>Enter</kbd> to evaluate, <kbd>Esc</kbd> to clear</span>
+    </footer>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
